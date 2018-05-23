@@ -4,6 +4,16 @@
 
 > 2018年5月22日20:57:55 更新基础架子已经完成。
 
+> 第二次更新： 完成home模块
+    1. svgIcon 组件
+    2. headTop 组件
+    3. vuex 的应用
+    4. scss 应用
+    5. es7 async 和 await 的应用
+    6. Promise 应用
+    7. fetch 应用
+    8. es6 结构
+
 
 ## Build Setup
 
