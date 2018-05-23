@@ -19,8 +19,22 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    context: [ //代理路径
+            '/shopping',
+            '/ugc',
+            '/v1',
+            '/v2',
+            '/v3',
+            '/v4',
+            '/bos',
+            '/member',
+            '/promotion',
+            '/eus',
+            '/payapi',
+            '/img',
+    ],
+    proxypath: 'http://cangdu.org:8001',
 
-    
     /**
      * Source Maps
      */
