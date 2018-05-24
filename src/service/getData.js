@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-24 17:12:59
+* @Last Modified time: 2018-05-24 19:51:13
 */
 
 import fetch from '../config/fetch'
@@ -70,5 +70,8 @@ export const sendMobile = (sendData, captcha_code, type, password) => fetch('/v1
     way: type,
     password
 }, "POST")
-
+//
 export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', { username, password, captcha_code }, 'POST')
+
+//改密码
+export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', {username, oldpassWord, newpassword, confirmpassword, captcha_code}, 'POST');
