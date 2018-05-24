@@ -15,6 +15,10 @@
     8. es6 结构
 
 
+> 2018年5月24日18:50:51 第三次更新
+    1. alertTip 组件
+    2. 完成login模块
+
 ## Build Setup
 
 ``` bash
