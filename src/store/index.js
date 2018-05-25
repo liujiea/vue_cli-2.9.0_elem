@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:05:36
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-23 17:34:25
+* @Last Modified time: 2018-05-25 16:59:19
 */
 
 import Vue from 'vue'
@@ -17,7 +17,8 @@ console.log(actions)
 
 const state = {
     userInfo: null,      //用户信息
-    login: true          //是否登录
+    login: true,          //是否登录
+    geohash: ''          //定位信息
 }
 
 export default new Vuex.Store({

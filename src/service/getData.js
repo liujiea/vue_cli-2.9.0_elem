@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-24 19:51:13
+* @Last Modified time: 2018-05-25 13:13:30
 */
 
 import fetch from '../config/fetch'
@@ -30,7 +30,30 @@ export const hotcity = () => fetch('/v1/cities', {
 export const groupcity = () => fetch('/v1/cities', {
     type: 'group'
 })
-
+/**
+ * [获取当前城市信息]
+ * @param  {[type]} name [description]
+ * @return {[type]}      [description]
+ */
+export const currentcity = number => fetch('/v1/cities/' + number)
+/**
+ * [当前城市的搜索值]
+ * @param  {[type]} cityid [description]
+ * @param  {[type]} value  [description]
+ * @return {[type]}        [description]
+ */
+export const searchplace = (cityid, value) => fetch('/v1/pois', {
+    type: 'search',
+    city_id: cityid,
+    keyword: value
+})
+/**
+ * [手机号登录]
+ * @param  {[type]} code           [description]
+ * @param  {[type]} mobile         [description]
+ * @param  {[type]} validate_token [description]
+ * @return {[type]}                [description]
+ */
 export const sendLogin = (code, mobile, validate_token) => fetch('/v1/login/app_mobile', { code, mobile, validate_token }, "POST")
 
 /**

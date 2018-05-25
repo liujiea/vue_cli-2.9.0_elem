@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 10:15:52
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-24 17:21:10
+* @Last Modified time: 2018-05-25 10:28:10
 */
 /**
  * 存储localStorage
@@ -26,4 +26,14 @@ export const setStore = (name, content) => {
 export const getStore = name => {
     if (!name) return;
     return window.localStorage.getItem(name);
+}
+
+/**
+ * 删除localStorage
+ * @param  {[type]} name [description]
+ * @return {[type]}      [description]
+ */
+export const removeStore = name => {
+    if (!name) return;
+    window.localStorage.removeItem(name)
 }
