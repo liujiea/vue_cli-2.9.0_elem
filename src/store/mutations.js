@@ -2,12 +2,14 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-24 17:24:26
+* @Last Modified time: 2018-05-26 16:12:14
 */
 
 import {
     GET_USERINFO,
-    RECORD_USERINFO
+    RECORD_USERINFO,
+    RECORD_ADDRESS,
+    SAVE_GEOHASH
 } from './mutation-types.js'
 
 import {setStore, getStore} from '../config/mUtils'
@@ -36,6 +38,17 @@ export default {
         } else {
             state.userInfo = null;
         }
+    },
+    //记录当前经纬度
+    [RECORD_ADDRESS](state, {
+        latitude,
+        longitude
+    }) {
+        state.latitude = latitude;
+        state.longitude = longitude;
+    },
+    [SAVE_GEOHASH](state, geohash) {
+        state.geohash = geohash;
     }
 }
 

@@ -26,6 +26,22 @@
 > 2018年5月25日17:34:07 第五次更新
     1.完成城市列表模块
 
+> 2018年5月26日17:18:52 第六次更新
+    1. 完成footGuide 组件
+    2. 完成shoplist 组件
+        1) 添加shoplist请求方法
+        2) 在mUtils 里面添加showBack, 和animate方法
+        3) 在mixin中添加loadMore, getImgPath
+        4) 完成loading 组件
+        5) 完成ratingStar 组件
+    3.在getData 添加 msiteAddress, misteFoodTypes, cityGuess 三个方法
+    4. 引用Swiper 插件
+
+    这个组价非常的难写， 就光抄写部分就是问题很多；
+    比如原版引用
+    import 'src/plugins/swiper.min.js'
+    但是抄写的时候，就是不行，所以只能npm install swiper --save
+    import Swiper from 'swiper'
 ## Build Setup
 
 ``` bash

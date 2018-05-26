@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-25 13:13:30
+* @Last Modified time: 2018-05-26 16:29:55
 */
 
 import fetch from '../config/fetch'
@@ -82,6 +82,21 @@ export const checkExsis = (checkNumber, type) => fetch('/v1/users/exists', {
 })
 
 /**
+ * 获取msite页面地址信息
+ */
+export const msiteAddress = geohash => fetch('/v2/pois/' + geohash);
+
+/**
+ * 获取msite页面食品分类列表
+ */
+
+export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
+    geohash,
+    group_type: '1',
+    'flags[]': 'F'
+})
+
+/**
  * 发送账号
  */
 
@@ -93,7 +108,32 @@ export const sendMobile = (sendData, captcha_code, type, password) => fetch('/v1
     way: type,
     password
 }, "POST")
-//
+
+// 获取msite商铺列表
+
+export const shopList = (latitude, longitude, offset, restaurant_category_id="", restaurant_category_ids = "", order_by = "", delivery_mode = "", support_ids = []) => {
+    let supportStr = "";
+    support_ids.forEach(item => {
+        if (item.status) {
+            supportStr += '&support_ids[]=' + item.id;
+        }
+    });
+    let data = {
+        latitude,
+        longitude,
+        offset,
+        limit: '20',
+        'extras[]': 'activities',
+        keyword: '',
+        restaurant_category_id,
+        'restaurant_category_id[]': restaurant_category_ids,
+        order_by,
+        'delivery_mode[]': delivery_mode + supportStr
+    };
+    return fetch('/shopping/restaurants', data);
+}
+
+//密码登录
 export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', { username, password, captcha_code }, 'POST')
 
 //改密码

@@ -40,7 +40,7 @@
     </div>
 </template>
 <script type="text/javascript">
-    import headTop from '../../components/header/head.vue'
+    import headTop from 'src/components/header/head.vue'
     import { cityGuess, hotcity, groupcity } from '../../service/getData'
     export default {
         components: {
