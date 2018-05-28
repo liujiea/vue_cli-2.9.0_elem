@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-26 16:29:55
+* @Last Modified time: 2018-05-28 10:38:18
 */
 
 import fetch from '../config/fetch'
@@ -86,6 +86,35 @@ export const checkExsis = (checkNumber, type) => fetch('/v1/users/exists', {
  */
 export const msiteAddress = geohash => fetch('/v2/pois/' + geohash);
 
+/**
+ * 获取food页面的category种类类型
+ */
+
+export const foodCategory = (latitude, longitude) => fetch('/shopping/v2/restaurant/category', {
+    latitude,
+    longitude
+});
+
+
+/**
+ * 获取food页面的配送方
+ */
+
+export const foodDelivery = (latitude, longitude) => fetch('/shopping/v1/restaurants/delivery_modes', {
+    latitude,
+    longitude,
+    kw: ''
+});
+
+/**
+ * 获取food页面的商家属性活动列表
+ */
+
+export const foodActivity = (latitude, longitude) => fetch('/shopping/v1/restaurants/activity_attributes', {
+    latitude,
+    longitude,
+    kw: ''
+})
 /**
  * 获取msite页面食品分类列表
  */

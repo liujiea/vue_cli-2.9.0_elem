@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-25 15:48:10
+* @Last Modified time: 2018-05-28 09:22:35
 */
 
 import App from '../App.vue'
@@ -12,6 +12,7 @@ const login = r => require.ensure([], () => r(require('../page/login/login')), '
 const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city');
 const msite = r => require.ensure([], () => r(require('../page/msite/msite')), 'msite');
+const food = r => require.ensure([], () => r(require('../page/food/food')), 'food');
 export default [
     {
         path: '/',
@@ -44,6 +45,10 @@ export default [
             {
                 path: '/msite',
                 component: msite
+            },
+            {
+                path: '/food',
+                component: food
             }
         ]
     }

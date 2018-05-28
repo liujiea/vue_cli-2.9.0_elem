@@ -42,6 +42,10 @@
     import 'src/plugins/swiper.min.js'
     但是抄写的时候，就是不行，所以只能npm install swiper --save
     import Swiper from 'swiper'
+
+> 2018年5月28日13:03:51 第七次更新
+    1.新增food 模块；
+    2. 新增 foodCategory, foodDelivery, foodActivity  方法
 ## Build Setup
 
 ``` bash
