@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:05:36
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-26 14:22:22
+* @Last Modified time: 2018-05-29 13:49:43
 */
 
 import Vue from 'vue'
@@ -20,7 +20,8 @@ const state = {
     longitude: '',      //当前位置经度
     userInfo: null,      //用户信息
     login: true,          //是否登录
-    geohash: ''          //定位信息
+    geohash: '',          //定位信息
+    cartList: [],       //购物车列表
 }
 
 export default new Vuex.Store({

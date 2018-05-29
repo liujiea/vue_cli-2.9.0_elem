@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-26 11:02:42
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-26 17:17:34
+* @Last Modified time: 2018-05-29 16:48:51
 */
 
 'use strict';
@@ -25,7 +25,7 @@ export const loadMore = {
                 let scrollType = el.attributes.type && el.attributes.type.value;
                 let scrollReduce = 2;
                 if (scrollType == 2) {
-                    scroll = el;
+                    scrollEl = el;
                     heightEl = el.children[0];
                 } else {
                     scrollEl = document.body;
