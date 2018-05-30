@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-28 13:30:40
+* @Last Modified time: 2018-05-30 16:16:30
 */
 
 import App from '../App.vue'
@@ -14,6 +14,10 @@ const city = r => require.ensure([], () => r(require('../page/city/city')), 'cit
 const msite = r => require.ensure([], () => r(require('../page/msite/msite')), 'msite');
 const food = r => require.ensure([], () => r(require('../page/food/food')), 'food');
 const shop = r => require.ensure([], () => r(require('../page/shop/shop')), 'shop');
+const foodDetail = r => require.ensure([], () => r(require('../page/shop/children/foodDetail')), 'foodDetail');
+const shopDetail = r => require.ensure([], () => r(require('../page/shop/children/shopDetail')), 'shopDetail');
+const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/children/shopSafe')), 'shopSafe')
+
 export default [
     {
         path: '/',
@@ -51,9 +55,28 @@ export default [
                 path: '/food',
                 component: food
             },
+            //商品页
             {
                 path: '/shop',
-                component: shop
+                component: shop,
+                children: [
+                    {
+                        //食品详情页
+                        path: 'foodDetail',
+                        component: foodDetail
+                    },
+                    {
+                        //商铺详情页
+                        path: 'shopDetail',
+                        component: shopDetail,
+                        children: [
+                            {
+                                path: 'shopSafe',
+                                component: shopSafe
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }

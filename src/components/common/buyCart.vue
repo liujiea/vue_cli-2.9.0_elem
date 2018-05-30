@@ -83,7 +83,7 @@
                 let elLeft = event.target.getBoundingClientRect().left;
                 let elBottom = event.target.getBoundingClientRect().bottom;
                 this.showMoveDot.push(true);
-                this.$emit('showMoveDot', this.showMoveDot, elleft, elBottom);
+                this.$emit('showMoveDot', this.showMoveDot, elLeft, elBottom);
             },
             //显示规格列表
             showChooseList(foodScroll) {

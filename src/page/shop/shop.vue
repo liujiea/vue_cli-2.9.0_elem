@@ -191,7 +191,7 @@
                                         </div>
                                         <div class="cart_list_price">
                                             <span>￥</span>
-                                            <span>item.price</span>
+                                            <span>{{item.price}}</span>
                                         </div>
                                         <section class="cart_list_control">
                                             <span @click="removeOutCart(item.category_id, item.item_id, item.food_id, item.name, item.price, item.spects)">
@@ -294,7 +294,7 @@
                     <section class="specs_details">
                         <h5 class="specs_details_title">{{choosedFoods.specifications[0].name}}</h5>
                         <ul>
-                            <li v-for="(item, itemIndex) in choosedFoods.specifications[0].values" :class="{specs_activity: itemIndex == specsIndex}" @click="chooseSpecs(itemIndex)" :key="itemIndex">
+                            <li v-for="(item, itemIndex) in choosedFoods.specifications[0].values" :class="{specs_activity: itemIndex == specsIndex}" @click="chooseSpecs(itemIndex)">
                                 {{item}}
                             </li>
                         </ul>
@@ -368,7 +368,7 @@
                 loadRatings: false,   //加载更多评论是显示加载组件
                 foodScroll: null,   //食品列表scroll
                 showSpecs: false,   //控制显示食品规格
-                specsindex: 0,      //当前选中的规格索引值
+                specsIndex: 0,      //当前选中的规格索引值
                 choosedFoods: null,   //当前选中视频数据
                 showDeleteTip: false,   //多规格商品点击减按钮， 弹出提示框
                 showMoveDot: [],      //控制下落的小圆点显示隐藏
@@ -634,6 +634,8 @@
             },
             //记录当前所选规格的索引值
             chooseSpecs(index) {
+                console.log(this.specsIndex);
+                console.log(index);
                 this.specsIndex = index;
             },
             //多规格商品加入购物车

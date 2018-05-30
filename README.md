@@ -46,6 +46,13 @@
 > 2018年5月28日13:03:51 第七次更新
     1.新增food 模块；
     2. 新增 foodCategory, foodDelivery, foodActivity  方法
+
+> 2018年5月30日08:47:29 第八次更新
+    1. 新增shop模块
+
+> 2018年5月30日16:58:36 第九次更新
+    1. 新增shop模板的子组件shopDetail
+    2. 新增shopDeatil的子组件shopSafe
 ## Build Setup
 
 ``` bash

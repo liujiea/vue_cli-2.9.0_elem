@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:05:36
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-29 13:49:43
+* @Last Modified time: 2018-05-30 16:52:36
 */
 
 import Vue from 'vue'
@@ -22,6 +22,7 @@ const state = {
     login: true,          //是否登录
     geohash: '',          //定位信息
     cartList: [],       //购物车列表
+    shopDetail: null    //购物车详情
 }
 
 export default new Vuex.Store({
