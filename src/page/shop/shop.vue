@@ -634,8 +634,6 @@
             },
             //记录当前所选规格的索引值
             chooseSpecs(index) {
-                console.log(this.specsIndex);
-                console.log(index);
                 this.specsIndex = index;
             },
             //多规格商品加入购物车

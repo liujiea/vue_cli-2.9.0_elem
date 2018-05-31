@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-30 16:16:30
+* @Last Modified time: 2018-05-31 08:53:09
 */
 
 import App from '../App.vue'
@@ -12,12 +12,18 @@ const login = r => require.ensure([], () => r(require('../page/login/login')), '
 const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city');
 const msite = r => require.ensure([], () => r(require('../page/msite/msite')), 'msite');
+//食品
 const food = r => require.ensure([], () => r(require('../page/food/food')), 'food');
+//商铺
 const shop = r => require.ensure([], () => r(require('../page/shop/shop')), 'shop');
+//食品详情
 const foodDetail = r => require.ensure([], () => r(require('../page/shop/children/foodDetail')), 'foodDetail');
+//商店详情
 const shopDetail = r => require.ensure([], () => r(require('../page/shop/children/shopDetail')), 'shopDetail');
+//商店安全
 const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/children/shopSafe')), 'shopSafe')
-
+//结算
+const confirmOrder = r => require.ensure([], () => r(require('../page/confirmOrder/confirmOrder')), 'confirmOrder')
 export default [
     {
         path: '/',
@@ -51,6 +57,7 @@ export default [
                 path: '/msite',
                 component: msite
             },
+            //食品
             {
                 path: '/food',
                 component: food
@@ -77,6 +84,10 @@ export default [
                         ]
                     }
                 ]
+            },
+            {
+                path: '/confirmOrder',
+                component: confirmOrder
             }
         ]
     }

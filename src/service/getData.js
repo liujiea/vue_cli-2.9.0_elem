@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-28 16:46:39
+* @Last Modified time: 2018-05-31 11:08:28
 */
 
 import fetch from '../config/fetch'
@@ -164,6 +164,39 @@ export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
     'flags[]': 'F'
 })
 
+/*
+确认订单
+ */
+export const checkout = (geohash, entities, shopid) => fetch('/v1/carts/checkout', {
+    come_from: 'web',
+    geohash,
+    entities,
+    restaurant_id: shopid
+}, 'POST');
+
+//个人中心里编辑地址
+export const getAddressList = (user_id) => fetch('/v1/users/'+user_id+'/addresses');
+/**
+ * 下订单
+ * @param  {[type]} user_id           [description]
+ * @param  {[type]} cartId            [description]
+ * @param  {[type]} choosedAddress_id [description]
+ * @param  {[type]} remarklist        [description]
+ * @param  {[type]} cartGroups        [description]
+ * @param  {[type]} geohash           [description]
+ * @param  {[type]} sig               [description]
+ * @return {[type]}                   [description]
+ */
+export const placeOrders = (user_id, cart_id, address_id, description, entities, geohash, sig) => fetch('/v1/users/'+user_id+ '/carts/'+cart_id + '/orders', {
+    address_id,
+    come_from: "mobile_web",
+    deliver_time: "",
+    description,
+    entities,
+    geohash,
+    paymethod_id: 1,
+    sig
+}, 'POST')
 /**
  * 发送账号
  */

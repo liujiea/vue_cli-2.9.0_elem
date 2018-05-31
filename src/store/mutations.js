@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-29 16:03:12
+* @Last Modified time: 2018-05-31 13:29:43
 */
 
 import {
@@ -15,7 +15,13 @@ import {
     REDUCE_CART,
     INIT_BUYCART,
     CLEAR_CART,
-    RECORD_SHOPDETAIL
+    RECORD_SHOPDETAIL,
+    CHOOSE_ADDRESS,
+    NEED_VALIDATION,
+    SAVE_CART_ID_SIG,
+    SAVE_ORDER_PARAM,
+    ORDER_SUCCESS,
+    SAVE_SHOPID
 } from './mutation-types.js'
 
 import {setStore, getStore} from '../config/mUtils'
@@ -134,6 +140,43 @@ export default {
     //记录商品详情
     [RECORD_SHOPDETAIL](state, detail) {
         state.shopDetail = detail;
+    },
+    //选择的地址
+    [CHOOSE_ADDRESS](state, {
+        address,
+        index
+    }) {
+        state.choosedAddress = address;
+        state.addressIndex = index;
+    },
+    //保存下单需要验证的返回值
+    [NEED_VALIDATION](state, needValidation) {
+        state.needValidation = needValidation;
+    },
+    //保存下单后购物id和sig
+    [SAVE_CART_ID_SIG](state, {
+        cart_id,
+        sig
+    }) {
+        state.cart_id = cart_id;
+        state.sig = sig;
+    },
+    //保存下单参数， 用户验证页面调用
+    [SAVE_ORDER_PARAM](state, orderParam) {
+        state.orderParam = orderParam;
+    },
+    // //修改下单参数
+    // [CHANGE_ORDER_PARAM](state, newParam) {
+    //     state.orderParam = Object.assign({}, state.orderParam, newParam);
+    // },
+    //下单成功， 保存订单返回信息
+    [ORDER_SUCCESS](state, order) {
+        state.cartPrice = null;
+        state.orderMessage = order;
+    },
+    //保存商铺id
+    [SAVE_SHOPID](state, shopid) {
+        state.shopid = shopid;
     }
 }
 
