@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 16:15:40
+* @Last Modified time: 2018-06-04 19:49:43
 */
 
 import {
@@ -23,7 +23,8 @@ import {
     SAVE_CART_ID_SIG,
     SAVE_ORDER_PARAM,
     ORDER_SUCCESS,
-    SAVE_SHOPID
+    SAVE_SHOPID,
+    CONFIRM_REMARK
 } from './mutation-types.js'
 
 import {setStore, getStore} from '../config/mUtils'
@@ -154,6 +155,7 @@ export default {
     }) {
         state.choosedAddress = address;
         state.addressIndex = index;
+        console.log(state.addressIndex)
     },
     //保存地址
     [CONFIRM_ADDRESS](state, newAddress) {
@@ -187,6 +189,13 @@ export default {
     //保存商铺id
     [SAVE_SHOPID](state, shopid) {
         state.shopid = shopid;
+    },
+    [CONFIRM_REMARK](state, {
+        remarkText,
+        inputText
+    }){
+        state.remarkText = remarkText;
+        state.inputText = inputText;
     }
 }
 

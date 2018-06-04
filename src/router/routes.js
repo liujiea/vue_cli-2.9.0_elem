@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 14:58:25
+* @Last Modified time: 2018-06-04 19:24:23
 */
 
 import App from '../App.vue'
@@ -30,6 +30,8 @@ const chooseAddress = r => require.ensure([], () => r(require('../page/confirmOr
 const addAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/children/addAddress')), 'addAddress')
 //搜索地址
 const searchAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/children/children/searchAddress')), 'searchAddress');
+//备注
+const remark = r => require.ensure([], () => r(require('../page/confirmOrder/children/remark')), 'remark');
 export default [
     {
         path: '/',
@@ -110,6 +112,11 @@ export default [
                                 ]
                             }
                         ]
+                    },
+                    //备注
+                    {
+                        path: 'remark',
+                        component: remark
                     }
                 ]
             }

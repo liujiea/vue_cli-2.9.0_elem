@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 16:36:33
+* @Last Modified time: 2018-06-04 19:51:17
 */
 
 import fetch from '../config/fetch'
@@ -253,8 +253,15 @@ export const postAddAddress = (userId, address, address_detail, geohash, name, p
     tag_type
 }, 'POST')
 
-
+//搜索
 export const searchNearby = (keyword) => fetch('/v1/pois', {
     type: 'nearby',
     keyword
 })
+
+//获取备注
+export const getRemark = (id, sig) => fetch('/v1/carts/' + id + '/remarks', {
+    sig
+})
+
+
