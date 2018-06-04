@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-31 08:53:09
+* @Last Modified time: 2018-06-04 14:58:25
 */
 
 import App from '../App.vue'
@@ -24,6 +24,12 @@ const shopDetail = r => require.ensure([], () => r(require('../page/shop/childre
 const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/children/shopSafe')), 'shopSafe')
 //结算
 const confirmOrder = r => require.ensure([], () => r(require('../page/confirmOrder/confirmOrder')), 'confirmOrder')
+//选择收货地址
+const chooseAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/chooseAddress')), 'chooseAddress')
+//新增收货地址
+const addAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/children/addAddress')), 'addAddress')
+//搜索地址
+const searchAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/children/children/searchAddress')), 'searchAddress');
 export default [
     {
         path: '/',
@@ -87,7 +93,25 @@ export default [
             },
             {
                 path: '/confirmOrder',
-                component: confirmOrder
+                component: confirmOrder,
+                children: [
+                    {
+                        path: 'chooseAddress',
+                        component: chooseAddress,
+                        children: [
+                            {
+                                path: 'addAddress',
+                                component: addAddress,
+                                children: [
+                                    {
+                                        path: 'searchAddress',
+                                        component: searchAddress
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }

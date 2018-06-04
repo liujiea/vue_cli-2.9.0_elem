@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-31 11:08:28
+* @Last Modified time: 2018-06-04 16:36:33
 */
 
 import fetch from '../config/fetch'
@@ -239,3 +239,22 @@ export const accountLogin = (username, password, captcha_code) => fetch('/v2/log
 
 //改密码
 export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', {username, oldpassWord, newpassword, confirmpassword, captcha_code}, 'POST');
+
+export const postAddAddress = (userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type) => fetch('/v1/users/'+ userId + '/addresses', {
+    address,
+    address_detail,
+    geohash,
+    name,
+    phone,
+    phone_bk,
+    poi_type,
+    sex,
+    tag,
+    tag_type
+}, 'POST')
+
+
+export const searchNearby = (keyword) => fetch('/v1/pois', {
+    type: 'nearby',
+    keyword
+})

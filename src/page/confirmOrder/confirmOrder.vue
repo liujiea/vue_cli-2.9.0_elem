@@ -8,15 +8,15 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
                     </svg>
                     <div class="add_address" v-if="!choosedAddress">请添加一个收货地址</div>
-                    <div  v-else class="address_deatil_container">
+                    <div  v-else class="address_detail_container">
                         <header>
-                            <span>{{chooseAddress.name}}</span>
-                            <span>{{chooseAddress.sex == 1 ? "先生" : '女士'}}</span>
-                            <span>{{chooseAddress.name}}</span>
+                            <span>{{choosedAddress.name}}</span>
+                            <span>{{choosedAddress.sex == 1 ? "先生" : '女士'}}</span>
+                            <span>{{choosedAddress.phone}}</span>
                         </header>
                         <div class="address_detail">
-                            <span v-if="chooseAddress.tag" :style="{backgroundColor: iconColor(chooseAddress.tag)}">{{chooseAddress.tag}}</span>
-                            <p>{{chooseAddress.address_detail}}</p>
+                            <span v-if="choosedAddress.tag" :style="{backgroundColor: iconColor(choosedAddress.tag)}">{{choosedAddress.tag}}</span>
+                            <p>{{choosedAddress.address_detail}}</p>
                         </div>
                     </div>
                 </div>

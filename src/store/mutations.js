@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-31 13:29:43
+* @Last Modified time: 2018-06-04 16:15:40
 */
 
 import {
@@ -17,6 +17,8 @@ import {
     CLEAR_CART,
     RECORD_SHOPDETAIL,
     CHOOSE_ADDRESS,
+    CONFIRM_ADDRESS,
+    CHOOSE_SEARCH_ADDRESS,
     NEED_VALIDATION,
     SAVE_CART_ID_SIG,
     SAVE_ORDER_PARAM,
@@ -62,6 +64,10 @@ export default {
     //保存当前经纬度
     [SAVE_GEOHASH](state, geohash) {
         state.geohash = geohash;
+    },
+    //选择当前地址
+    [CHOOSE_SEARCH_ADDRESS](state, place) {
+        state.searchAddress = place;
     },
     //加入购物车
     [ADD_CART] (state, {
@@ -148,6 +154,10 @@ export default {
     }) {
         state.choosedAddress = address;
         state.addressIndex = index;
+    },
+    //保存地址
+    [CONFIRM_ADDRESS](state, newAddress) {
+        state.newAddress.push(newAddress);
     },
     //保存下单需要验证的返回值
     [NEED_VALIDATION](state, needValidation) {

@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:09:31
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-31 11:27:13
+* @Last Modified time: 2018-06-04 16:08:17
 */
 //获取用户信息
 export const GET_USERINFO = 'GET_USERINFO'
@@ -34,3 +34,7 @@ export const SAVE_ORDER_PARAM = 'SAVE_ORDER_PARAM'
 export const ORDER_SUCCESS = 'ORDER_SUCCESS'
 //保存商铺id
 export const SAVE_SHOPID = 'SAVE_SHOPID'
+//提交地址
+export const CONFIRM_ADDRESS = "CONFIRM_ADDRESS"
+//选择搜索地址
+export const CHOOSE_SEARCH_ADDRESS = 'CHOOSE_SEARCH_ADDRESS'
