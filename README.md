@@ -53,6 +53,13 @@
 > 2018年5月30日16:58:36 第九次更新
     1. 新增shop模板的子组件shopDetail
     2. 新增shopDeatil的子组件shopSafe
+
+
+> 2018年6月4日17:54:39 第十次更新
+    这几天都在忙公司的事情， 又不更新了， 忙完了， 就得晚上再开始仿写了；
+    新增searchAddress, searchAddress, chooseAddress模块；
+    写了那么久， 我始终觉得， 这个作者真乃有大智慧啊
+    令后人模板啊
 ## Build Setup
 
 ``` bash
