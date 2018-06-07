@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 19:51:17
+* @Last Modified time: 2018-06-07 14:56:30
 */
 
 import fetch from '../config/fetch'
@@ -264,4 +264,15 @@ export const getRemark = (id, sig) => fetch('/v1/carts/' + id + '/remarks', {
     sig
 })
 
+/**
+ * 重新发送订单验证码
+ */
+
+export const payRequest = (merchantOrderNo, userId) => fetch('/payapi/payment/queryOrder', {
+    merchantId: 5,
+    merchantOrderNo,
+    source: 'MOBILE_WAP',
+    userId,
+    version: '1.0.0',
+});
 

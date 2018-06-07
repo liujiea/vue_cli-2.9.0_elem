@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 19:24:23
+* @Last Modified time: 2018-06-07 15:23:41
 */
 
 import App from '../App.vue'
@@ -32,6 +32,12 @@ const addAddress = r => require.ensure([], () => r(require('../page/confirmOrder
 const searchAddress = r => require.ensure([], () => r(require('../page/confirmOrder/children/children/children/searchAddress')), 'searchAddress');
 //备注
 const remark = r => require.ensure([], () => r(require('../page/confirmOrder/children/remark')), 'remark');
+//发票
+const invoice = r => require.ensure([], () => r(require('../page/confirmOrder/children/invoice')), 'invoice');
+//支付
+const payment = r => require.ensure([], () => r(require('../page/confirmOrder/children/payment')), 'payment');
+//订单
+const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 export default [
     {
         path: '/',
@@ -117,8 +123,23 @@ export default [
                     {
                         path: 'remark',
                         component: remark
+                    },
+                    //发票
+                    {
+                        path: 'invoice',
+                        component: invoice
+                    },
+                    //支付
+                    {
+                        path: 'payment',
+                        component: payment
                     }
                 ]
+            },
+            //订单
+            {
+                path: '/order',
+                component: order
             }
         ]
     }

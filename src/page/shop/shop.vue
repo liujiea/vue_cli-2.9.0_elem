@@ -168,7 +168,7 @@
                         </section>
                         <section class="gotopay" :class="{gotopay_acitvity: minimumOrderAmount <= 0}">
                             <span class="gotopay_button_style" v-if="minimumOrderAmount > 0">还差￥{{minimumOrderAmount}}起送</span>
-                            <router-link :to="{path: '/confirmOrder', query: {geohash, shopId}}" class="gotopay_button_style">去结算</router-link>
+                            <router-link :to="{path: '/confirmOrder', query: {geohash, shopId}}" class="gotopay_button_style" v-else>去结算</router-link>
                         </section>
                     </section>
                     <transition name="toggle-cart">
@@ -418,7 +418,7 @@
             //还差多少起送， 为负数时显示去结算按钮
             minimumOrderAmount: function () {
                 if (this.shopDetailData) {
-                    return this.shopDetailData.float_minimum_oreder_amount - this.totalPrice;
+                    return this.shopDetailData.float_minimum_order_amount - this.totalPrice;
                 } else {
                     return null;
                 }

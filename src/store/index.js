@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:05:36
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-04 16:39:05
+* @Last Modified time: 2018-06-07 13:25:55
 */
 
 import Vue from 'vue'
@@ -29,7 +29,8 @@ const state = {
     choosedAddress: null,   //选择地址
     addressIndex: null,  //地址编号
     newAddress: [],     //新地址
-    searchAddress: null
+    searchAddress: null,   //搜索地址
+    invoice: null      //是否开发票
 }
 
 export default new Vuex.Store({
