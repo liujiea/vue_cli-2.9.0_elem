@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-07 14:56:30
+* @Last Modified time: 2018-06-08 20:55:08
 */
 
 import fetch from '../config/fetch'
@@ -276,3 +276,11 @@ export const payRequest = (merchantOrderNo, userId) => fetch('/payapi/payment/qu
     version: '1.0.0',
 });
 
+/**
+ * 获取订单列表
+ */
+
+export const getOrderList = (user_id, offset) => fetch('/bos/v2/users/' + user_id + '/order', {
+    limit: 10,
+    offset,
+})
