@@ -61,7 +61,7 @@
             }
         },
         mounted() {
-            this.initData();
+            // this.initData();
         },
         mixins: [loadMore],
         components: {
@@ -83,6 +83,7 @@
             async initData() {
                 if (this.userInfo && this.userInfo.user_id) {
                     let res = await getOrderList(this.userInfo.user_id, this.offset);
+                    // let res = [];
                     this.orderList = [...res];
                     this.hideLoading();
                 } else {
@@ -102,7 +103,7 @@
                 this.orderList = [...this.orderList, ...res];
                 this.hideLoading();
                 if (res.length < 10) {
-                    retur;
+                    return;
                 }
 
                 this.preventRepeat = false ;
@@ -114,6 +115,9 @@
                 this.$router.push('/order/orderDetail');
             },
             //生产环境与发布环境隐藏loading方式不同
+            hideLoading() {
+                this.showLoading = false;
+            }
         },
         watch : {
             userInfo: function (value) {

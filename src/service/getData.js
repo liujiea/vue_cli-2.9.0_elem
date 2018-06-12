@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-08 20:55:08
+* @Last Modified time: 2018-06-12 09:39:13
 */
 
 import fetch from '../config/fetch'
@@ -283,4 +283,15 @@ export const payRequest = (merchantOrderNo, userId) => fetch('/payapi/payment/qu
 export const getOrderList = (user_id, offset) => fetch('/bos/v2/users/' + user_id + '/order', {
     limit: 10,
     offset,
+})
+
+/**
+ * 获取search页面搜索结果
+ */
+
+export const searchRestaurant = (geohash, keyword) => fetch('/v4/restaurants', {
+    'extras[]': 'restaurant_activity',
+    geohash,
+    keyword,
+    type: 'search'
 })

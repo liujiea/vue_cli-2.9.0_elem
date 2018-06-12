@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-07 15:23:41
+* @Last Modified time: 2018-06-12 10:03:28
 */
 
 import App from '../App.vue'
@@ -38,6 +38,8 @@ const invoice = r => require.ensure([], () => r(require('../page/confirmOrder/ch
 const payment = r => require.ensure([], () => r(require('../page/confirmOrder/children/payment')), 'payment');
 //订单
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
+//搜索栏
+const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
 export default [
     {
         path: '/',
@@ -136,10 +138,15 @@ export default [
                     }
                 ]
             },
-            //订单
+            //订单页
             {
                 path: '/order',
                 component: order
+            },
+            // 搜索页
+            {
+                path: '/search/:geohash',
+                component: search
             }
         ]
     }
