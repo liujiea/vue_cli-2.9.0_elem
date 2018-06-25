@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-07 13:26:16
+* @Last Modified time: 2018-06-19 16:29:28
 */
 
 import {
@@ -38,7 +38,6 @@ export default {
     },
     //获取用户信息
     [GET_USERINFO](state, info) {
-        console.log(info)
         //如果state中userInfo， 而且原来的值不等于info 的值
         if(state.userInfo && (state.userInfo.username !== info.username)) {
             return;
@@ -49,7 +48,6 @@ export default {
         }
 
         if (!info.message) {
-            console.log(info)
             state.userInfo = {...info}
         } else {
             state.userInfo = null;

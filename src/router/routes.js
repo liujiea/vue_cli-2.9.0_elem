@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-12 10:03:28
+* @Last Modified time: 2018-06-25 20:41:00
 */
 
 import App from '../App.vue'
@@ -40,6 +40,10 @@ const payment = r => require.ensure([], () => r(require('../page/confirmOrder/ch
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 //搜索栏
 const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
+//侧页面
+const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
+//用户详情页
+const info =  r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
 export default [
     {
         path: '/',
@@ -147,6 +151,18 @@ export default [
             {
                 path: '/search/:geohash',
                 component: search
+            },
+            //个人页面
+            {
+                path: '/profile',
+                component: profile,
+                children: [
+                //个人页面详情
+                    {
+                        path: 'info',
+                        component: info
+                    }
+                ]
             }
         ]
     }

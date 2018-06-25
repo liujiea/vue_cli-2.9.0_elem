@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-26 11:02:42
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-05-29 16:48:51
+* @Last Modified time: 2018-06-25 15:14:44
 */
 
 'use strict';
@@ -43,7 +43,7 @@ export const loadMore = {
                 }, false)
 
                 el.addEventListener('touchmove', () => {
-                    loadMore();
+                    // loadMore();
                 }, false);
 
                 el.addEventListener('touchend', () => {
@@ -66,7 +66,7 @@ export const loadMore = {
 
                 const loadMore = () => {
                     if (scrollEl.scrollTop + windowHeight >= height + setTop + paddingBottom + paddingBottom + marginBottom - scrollReduce) {
-                        binging.value();
+                        binding.value();
                     }
                 }
             }
