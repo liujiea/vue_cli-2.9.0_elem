@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-25 20:41:00
+* @Last Modified time: 2018-07-02 20:34:48
 */
 
 import App from '../App.vue'
@@ -44,6 +44,14 @@ const search = r => require.ensure([], () => r(require('../page/search/search'))
 const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
 //用户详情页
 const info =  r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
+//修改用户名
+const setusername =  r => require.ensure([], () => r(require('../page/profile/children/children/setusername')), 'setusername')
+//修改用户名的地址
+const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
+//新增用户地址
+const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
+//新增用户详情
+const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
 export default [
     {
         path: '/',
@@ -160,7 +168,29 @@ export default [
                 //个人页面详情
                     {
                         path: 'info',
-                        component: info
+                        component: info,
+                        children: [
+                            {
+                                path: 'setusername',
+                                component: setusername
+                            },
+                            {
+                                path: 'address',
+                                component: address,
+                                children: [
+                                    {
+                                        path: 'add',
+                                        component: add,
+                                        children: [
+                                            {
+                                                path: 'addDetail',
+                                                component: addDetail
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }

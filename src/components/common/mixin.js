@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-26 11:02:42
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-25 15:14:44
+* @Last Modified time: 2018-06-28 15:01:37
 */
 
 'use strict';
@@ -42,8 +42,9 @@ export const loadMore = {
                     marginBottom = getStyle(el, 'marginBottom');
                 }, false)
 
-                el.addEventListener('touchmove', () => {
-                    // loadMore();
+                el.addEventListener('touchmove', (e) => {
+                    var Y = e.touches[0].clientY;
+                    el.style.translate3d = `0 ${Y} 0`
                 }, false);
 
                 el.addEventListener('touchend', () => {

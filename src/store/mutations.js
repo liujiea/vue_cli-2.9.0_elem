@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:08:39
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-19 16:29:28
+* @Last Modified time: 2018-07-02 21:09:23
 */
 
 import {
@@ -25,7 +25,11 @@ import {
     ORDER_SUCCESS,
     SAVE_SHOPID,
     CONFIRM_REMARK,
-    CONFIRM_INVOICE
+    CONFIRM_INVOICE,
+    RETSET_NAME,
+    ADD_ADDRESS,
+    SAVE_ADDRESS,
+    SAVE_ADDDETAIL
 } from './mutation-types.js'
 
 import {setStore, getStore} from '../config/mUtils'
@@ -200,6 +204,22 @@ export default {
     [CONFIRM_INVOICE](state, invoice) {
         console.log(invoice)
         state.invoice = invoice;
+    },
+    //修改名字
+    [RETSET_NAME](state, username) {
+        state.userInfo = Object.assign({}, state.userInfo,{username})
+    },
+    //删除地址列表
+    [SAVE_ADDRESS](state, newAddress) {
+        state.removeAddress = newAddress;
+    },
+    //保存新增地址
+    [SAVE_ADDDETAIL](state, addAddress) {
+        state.addAddress = addAddress;
+    },
+    //新增地址
+    [ADD_ADDRESS](state, obj) {
+        state.removeAddress = [obj, ...state.removeAddress];
     }
 }
 

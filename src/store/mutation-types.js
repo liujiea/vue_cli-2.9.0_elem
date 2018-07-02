@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:09:31
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-07 13:23:55
+* @Last Modified time: 2018-07-02 21:07:21
 */
 //获取用户信息
 export const GET_USERINFO = 'GET_USERINFO'
@@ -42,3 +42,11 @@ export const CHOOSE_SEARCH_ADDRESS = 'CHOOSE_SEARCH_ADDRESS'
 export const CONFIRM_REMARK = 'CONFIRM_REMARK'
 //提交是否开发票
 export const CONFIRM_INVOICE = 'CONFIRM_INVOICE'
+//修改名字
+export const RETSET_NAME = 'RETSET_NAME'
+//新增地址
+export const ADD_ADDRESS = 'ADD_ADDRESS'
+//保存地址
+export const SAVE_ADDRESS = 'SAVE_ADDRESS'
+//保存地址详情
+export const SAVE_ADDDETAIL = 'SAVE_ADDDETAIL'

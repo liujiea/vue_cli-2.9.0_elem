@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:05:36
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-07 13:25:55
+* @Last Modified time: 2018-07-02 20:42:35
 */
 
 import Vue from 'vue'
@@ -30,7 +30,9 @@ const state = {
     addressIndex: null,  //地址编号
     newAddress: [],     //新地址
     searchAddress: null,   //搜索地址
-    invoice: null      //是否开发票
+    invoice: null,      //是否开发票
+    removeAddress:[],//移除地址
+    addAddress: null,   //新增
 }
 
 export default new Vuex.Store({

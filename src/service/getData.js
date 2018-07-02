@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-12 09:39:13
+* @Last Modified time: 2018-06-26 13:52:19
 */
 
 import fetch from '../config/fetch'
@@ -295,3 +295,26 @@ export const searchRestaurant = (geohash, keyword) => fetch('/v4/restaurants', {
     keyword,
     type: 'search'
 })
+
+
+/**
+ * 退出登录
+ */
+
+export const signout = () => fetch('/v2/signout');
+
+
+/**
+*个人中心里搜索地址
+*/
+
+export const getSearchAddress = (keyword) => fetch('v1/pois',{
+    keyword:keyword,
+    type:'nearby'
+})
+
+/**
+* 删除地址
+*/
+
+export const deleteAddress = (userid, addressid) => fetch( '/v1/users/' + userid + '/addresses/' + addressid, {}, 'DELETE')

@@ -52,6 +52,7 @@ import { mobileCode, checkExsis, sendMobile, getcaptchas, changePassword } from 
                 showAlert: false,    //是否显示弹窗组件
                 alertText: null,     //弹窗内容
                 accountType: 'mobile', //注册方式
+                mobileCode: ''
             }
         },
         created () {
