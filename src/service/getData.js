@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-23 09:24:41
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-06-26 13:52:19
+* @Last Modified time: 2018-07-04 14:24:13
 */
 
 import fetch from '../config/fetch'
@@ -318,3 +318,26 @@ export const getSearchAddress = (keyword) => fetch('v1/pois',{
 */
 
 export const deleteAddress = (userid, addressid) => fetch( '/v1/users/' + userid + '/addresses/' + addressid, {}, 'DELETE')
+
+
+/**
+ * 红包数量
+ */
+
+export const getHongbaoNum = (id) => fetch('/promotion/v2/users/' + id + '/hongbaos?limit=20&offset=0')
+
+
+/**
+ * 历史红包
+ */
+
+export const getExpired = (id) => fetch('/promotion/v2/users/' + id + '/expired_hongbaos?limit=20&offset=0')
+
+/**
+ * 兑换红包
+ */
+
+export const exChangeHongbao = (id, exchange_code, captcha_code) => fetch('/v1/users/' + id + '/hongbao/exchange',{
+    exchange_code,
+    captcha_code,
+}, 'POST')

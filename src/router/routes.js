@@ -2,7 +2,7 @@
 * @Author: liujie
 * @Date:   2018-05-22 19:45:51
 * @Last Modified by:   liujie
-* @Last Modified time: 2018-07-02 20:34:48
+* @Last Modified time: 2018-07-04 15:10:01
 */
 
 import App from '../App.vue'
@@ -52,6 +52,24 @@ const address = r => require.ensure([], () => r(require('../page/profile/childre
 const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
 //新增用户详情
 const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
+//我的余额
+const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance');
+//我的余额详情
+const balanceDetail = r => require.ensure([], () => r(require('../page/balance/children/detail')), 'balanceDetail');
+//我的优惠券
+const benefit = r => require.ensure([], () => r(require('../page/benefit/benefit')), 'benefit');
+//优惠券
+const hbHistory = r => require.ensure([], () => r(require('../page/benefit/children/hbHistory')), 'hbHistory');
+//优惠券说明
+const hbDescription = r => require.ensure([], () => r(require('../page/benefit/children/hbDescription')), 'hbDescription');
+//代金卷说明
+const coupon = r => require.ensure([], () => r(require('../page/benefit/children/coupon')), 'coupon');
+//兑换红包
+const exchange = r => require.ensure([], () => r(require('../page/benefit/children/exchange')), 'exchange');
+//邀请人
+const commend = r => require.ensure([], () => r(require('../page/benefit/children/commend')), 'commend');
+//下载
+const download = r => require.ensure([], () => r(require('../page/download/download')), 'download');
 export default [
     {
         path: '/',
@@ -75,6 +93,11 @@ export default [
             {
                 path: '/forget',
                 component: forget
+            },
+            //下载
+            {
+                path: '/download',
+                component: download
             },
             //城市
             {
@@ -191,6 +214,44 @@ export default [
                                 ]
                             }
                         ]
+                    }
+                ]
+            },
+            //我的余额
+            {
+                path: '/balance',
+                component: balance,
+                children: [
+                    {
+                        path: 'detail',
+                        component: balanceDetail
+                    }
+                ]
+            },
+            //我的优惠券
+            {
+                path: '/benefit',
+                component: benefit,
+                children: [
+                    {
+                        path: 'hbHistory',
+                        component: hbHistory
+                    },
+                    {
+                        path: 'hbDescription',
+                        component: hbDescription
+                    },
+                    {
+                        path: 'coupon',
+                        component: coupon
+                    },
+                    {
+                        path: 'exchange',
+                        component: exchange
+                    },
+                    {
+                        path: 'commend',
+                        component: commend
                     }
                 ]
             }
